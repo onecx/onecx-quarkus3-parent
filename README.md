@@ -2,10 +2,10 @@
 
 Maven parent for all Quarkus3 OneCx application.
 
-[![License](https://img.shields.io/github/license/onecx/onecx-quarkus2-parent?style=for-the-badge&logo=apache)](https://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://img.shields.io/github/license/onecx/onecx-quarkus3-parent?style=for-the-badge&logo=apache)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Supported JVM Versions](https://img.shields.io/badge/JVM-17-brightgreen.svg?style=for-the-badge&logo=Java)](https://openjdk.org/projects/jdk/17/)
 [![GitHub Actions Status](https://img.shields.io/github/actions/workflow/status/onecx/onecx-quarkus3-parent/build.yml?logo=GitHub&style=for-the-badge)](https://github.com/onecx/onecx-quarkus3-parent/actions/workflows/build.yml)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/release/onecx/onecx-quarkus3-parent?display_name=tag&sort=semver&logo=github&style=for-the-badge)](https://github.com/onecx/onecx-quarkus2-parent/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/release/onecx/onecx-quarkus3-parent?display_name=tag&sort=semver&logo=github&style=for-the-badge)](https://github.com/onecx/onecx-quarkus3-parent/releases/latest)
 
 ### Definition
 
