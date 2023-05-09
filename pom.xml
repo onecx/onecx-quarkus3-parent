@@ -206,6 +206,12 @@
                             <goal>generate-code</goal>
                             <goal>generate-code-tests</goal>
                         </goals>
+                        <configuration>
+                            <properties>
+                                <quarkus.container-image.build>true</quarkus.container-image.build>
+                                <quarkus.container-image.group>localhost</quarkus.container-image.group>
+                            </properties>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
