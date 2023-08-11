@@ -75,17 +75,14 @@
         <javadoc-plugin.version>3.5.0</javadoc-plugin.version>
         <gpg-plugin.version>3.1.0</gpg-plugin.version>
 
-        <!-- Sonar -->
-        <sonar.coverage.exclusions>
-            **/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*
-        </sonar.coverage.exclusions>
-<!--        <sonar.exclusions></sonar.exclusions>-->
-
         <!-- Other -->
         <projectlombok.version>1.18.28</projectlombok.version>
         <projectlombok.mapstruct-binding.version>0.2.0</projectlombok.mapstruct-binding.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <assertj.version>3.24.2</assertj.version>
+
+        <!-- Jacoco/Sonar -->
+        <jacoco.excludes>**/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*,**/mapper/**,**/mappers/**,**/gen/**</jacoco.excludes>
     </properties>
 
     <dependencyManagement>
@@ -263,6 +260,7 @@
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                         <!--suppress UnresolvedMavenProperty -->
                         <maven.home>${maven.home}</maven.home>
+                        <quarkus.jacoco.excludes>${jacoco.excludes}</quarkus.jacoco.excludes>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -282,6 +280,7 @@
                                 <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                                 <!--suppress UnresolvedMavenProperty -->
                                 <maven.home>${maven.home}</maven.home>
+                                <quarkus.jacoco.excludes>${jacoco.excludes}</quarkus.jacoco.excludes>
                             </systemPropertyVariables>
                         </configuration>
                     </execution>
