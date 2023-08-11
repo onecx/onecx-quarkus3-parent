@@ -82,7 +82,7 @@
         <assertj.version>3.24.2</assertj.version>
 
         <!-- Jacoco/Sonar -->
-        <jacoco.excludes>**/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*,**/mapper/**,**/mappers/**,**/gen/**</jacoco.excludes>
+        <jacoco.excludes>**/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*,**/mapper/**,**/mappers/**,**/gen/**,**/dtos/**,**/dto/**</jacoco.excludes>
     </properties>
 
     <dependencyManagement>
