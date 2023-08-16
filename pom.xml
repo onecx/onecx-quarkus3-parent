@@ -82,7 +82,7 @@
         <assertj.version>3.24.2</assertj.version>
 
         <!-- Jacoco/Sonar -->
-        <jacoco.excludes>**/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*,**/mapper/**,**/mappers/**,**/gen/**,**/dtos/**,**/dto/**</jacoco.excludes>
+        <sonar.coverage.exclusions>**/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*,**/mapper/**,**/mappers/**,**/gen/**,**/dtos/**,**/dto/**</sonar.coverage.exclusions>
     </properties>
 
     <dependencyManagement>
@@ -260,7 +260,7 @@
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                         <!--suppress UnresolvedMavenProperty -->
                         <maven.home>${maven.home}</maven.home>
-                        <quarkus.jacoco.excludes>${jacoco.excludes}</quarkus.jacoco.excludes>
+                        <quarkus.jacoco.excludes>${sonar.coverage.exclusions}</quarkus.jacoco.excludes>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -280,7 +280,7 @@
                                 <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                                 <!--suppress UnresolvedMavenProperty -->
                                 <maven.home>${maven.home}</maven.home>
-                                <quarkus.jacoco.excludes>${jacoco.excludes}</quarkus.jacoco.excludes>
+                                <quarkus.jacoco.excludes>${sonar.coverage.exclusions}</quarkus.jacoco.excludes>
                             </systemPropertyVariables>
                         </configuration>
                     </execution>
