@@ -48,7 +48,7 @@
         <enforce-test-deps-scope.skip>${enforcer.skip}</enforce-test-deps-scope.skip>
 
         <!-- Quarkus configuration -->
-        <quarkus.version>3.3.1</quarkus.version>
+        <quarkus.version>3.3.3</quarkus.version>
         <quarkus.hibernate-orm.version>6.2.1.Final</quarkus.hibernate-orm.version>
         <quarkus.smallrye-open-api.version>3.5.2</quarkus.smallrye-open-api.version>
         <quarkiverse.quarkus-openapi-generator.version>2.2.10</quarkiverse.quarkus-openapi-generator.version>
@@ -76,6 +76,7 @@
         <gpg-plugin.version>3.1.0</gpg-plugin.version>
 
         <!-- Other -->
+        <openapitools.openapi-generator-maven-plugin.version>7.0.0</openapitools.openapi-generator-maven-plugin.version>
         <projectlombok.version>1.18.28</projectlombok.version>
         <projectlombok.mapstruct-binding.version>0.2.0</projectlombok.mapstruct-binding.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
@@ -186,6 +187,11 @@
                     <groupId>io.smallrye</groupId>
                     <artifactId>smallrye-open-api-maven-plugin</artifactId>
                     <version>${quarkus.smallrye-open-api.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.openapitools</groupId>
+                    <artifactId>openapi-generator-maven-plugin</artifactId>
+                    <version>${openapitools.openapi-generator-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
