@@ -496,6 +496,62 @@
                         </goals>
                     </execution>
                     <execution>
+                        <id>quarkus-enforce-banned-deps</id>
+                        <configuration>
+                            <rules>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>io.quarkus:quarkus-resteasy</exclude>
+                                    </excludes>
+                                    <message>------> !!! Replace quarkus-resteasy with quarkus-resteasy-reactive !!!</message>
+                                    <searchTransitive>true</searchTransitive>
+                                </bannedDependencies>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>io.quarkus:quarkus-resteasy-jackson</exclude>
+                                    </excludes>
+                                    <message>------> !!! Replace quarkus-resteasy-jackson with quarkus-resteasy-reactive-jackson !!!</message>
+                                    <searchTransitive>true</searchTransitive>
+                                </bannedDependencies>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>io.quarkus:quarkus-smallrye-opentracing</exclude>
+                                    </excludes>
+                                    <message>------> !!! Replace quarkus-smallrye-opentracing with quarkus-opentelemetry !!!</message>
+                                    <searchTransitive>true</searchTransitive>
+                                </bannedDependencies>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>io.quarkus:quarkus-smallrye-metrics</exclude>
+                                    </excludes>
+                                    <message>------> !!! Replace quarkus-smallrye-metrics with quarkus-micrometer-registry-prometheus !!!</message>
+                                    <searchTransitive>true</searchTransitive>
+                                </bannedDependencies>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>io.quarkus:quarkus-rest-client</exclude>
+                                    </excludes>
+                                    <message>------> !!! Replace quarkus-rest-client with quarkus-rest-client-reactive !!!</message>
+                                    <searchTransitive>true</searchTransitive>
+                                </bannedDependencies>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>io.quarkus:quarkus-rest-client-jackson</exclude>
+                                    </excludes>
+                                    <message>------> !!! Replace quarkus-rest-client-jackson with quarkus-rest-client-reactive-jackson !!!</message>
+                                    <searchTransitive>true</searchTransitive>
+                                </bannedDependencies>
+                            </rules>
+
+
+
+                            <skip>${enforce-test-deps-scope.skip}</skip>
+                        </configuration>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                    <execution>
                         <id>enforce-banned-deps</id>
                         <configuration>
                             <rules>
@@ -592,25 +648,6 @@
                 <skipITs>false</skipITs>
                 <quarkus.package.type>native</quarkus.package.type>
             </properties>
-        </profile>
-        <profile>
-            <id>openapi</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>io.smallrye</groupId>
-                        <artifactId>smallrye-open-api-maven-plugin</artifactId>                        
-                        <version>${quarkus.smallrye-open-api.version}</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>generate-schema</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
         <profile>
             <id>format</id>
