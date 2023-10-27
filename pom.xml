@@ -81,6 +81,9 @@
         <projectlombok.mapstruct-binding.version>0.2.0</projectlombok.mapstruct-binding.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <assertj.version>3.24.2</assertj.version>
+        <liquibase-sessionlock.version>1.6.7</liquibase-sessionlock.version>
+        <swagger-parser.version>2.1.16</swagger-parser.version>
+        <download-maven-plugin.version>1.7.1</download-maven-plugin.version>
 
         <!-- Jacoco/Sonar -->
         <sonar.coverage.exclusions>**/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*,**/mapper/**,**/mappers/**,**/gen/**,**/dtos/**,**/dto/**</sonar.coverage.exclusions>
@@ -131,10 +134,26 @@
                 <version>${quarkiverse.mockserver.version}</version>
                 <scope>test</scope>
             </dependency>
+            <!-- Only for testing to fix mockserver -->
+            <!-- Use with openapi generator and mockserver in BFF -->
+            <dependency>
+                <groupId>io.swagger.parser.v3</groupId>
+                <artifactId>swagger-parser</artifactId>
+                <version>${swagger-parser.version}</version>
+                <scope>test</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
                 <version>${assertj.version}</version>
+            </dependency>
+            <!-- Application that are using liquibase muss to add this -->
+            <!-- dependency to the class-path to avoid the start-up issues -->
+            <dependency>
+                <groupId>com.github.blagerweij</groupId>
+                <artifactId>liquibase-sessionlock</artifactId>
+                <version>${liquibase-sessionlock.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -192,6 +211,11 @@
                     <groupId>org.openapitools</groupId>
                     <artifactId>openapi-generator-maven-plugin</artifactId>
                     <version>${openapitools.openapi-generator-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.googlecode.maven-download-plugin</groupId>
+                    <artifactId>download-maven-plugin</artifactId>
+                    <version>${download-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
