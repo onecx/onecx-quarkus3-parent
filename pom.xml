@@ -251,6 +251,8 @@
                         <arg>-parameters</arg>
                         <arg>-Amapstruct.defaultComponentModel=jakarta-cdi</arg>
                         <arg>-Amapstruct.defaultInjectionStrategy=constructor</arg>
+                        <arg>-Amapstruct.unmappedTargetPolicy=ERROR</arg>
+                        <arg>-Amapstruct.unmappedSourcePolicy=IGNORE</arg>
                     </compilerArgs>
                     <annotationProcessorPaths>
                         <annotationProcessorPath>
