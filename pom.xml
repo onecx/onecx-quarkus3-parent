@@ -84,6 +84,8 @@
         <liquibase-sessionlock.version>1.6.7</liquibase-sessionlock.version>
         <swagger-parser.version>2.1.18</swagger-parser.version>
         <download-maven-plugin.version>1.7.1</download-maven-plugin.version>
+        <!-- version of the postgres container for liquibase diff -->
+        <liquibase.postgres.version>14</liquibase.postgres.version>
 
         <!-- Jacoco/Sonar -->
         <sonar.coverage.exclusions>**/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*,**/mapper/**,**/mappers/**,**/gen/**,**/dtos/**,**/dto/**</sonar.coverage.exclusions>
@@ -639,6 +641,30 @@
 
     <!-- Profiles -->
     <profiles>
+        <profile>
+            <id>db-diff</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.tkit.maven</groupId>
+                        <artifactId>tkit-liquibase-plugin</artifactId>
+                        <version>1.0.0</version>
+                        <executions>
+                            <execution>
+                                <id>default</id>
+                                <goals>
+                                    <goal>diff</goal>
+                                </goals>
+                                <phase>compile</phase>
+                                <configuration>
+                                    <postgresVersion>${liquibase.postgres.version}</postgresVersion>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>native</id>
             <activation>

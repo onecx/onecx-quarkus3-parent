@@ -22,9 +22,12 @@ This parent contains:
 
 ### Profiles
 
-#### openapi
+#### db-diff
 
-OpenApi generate an openapi.yaml in the target directory
+To generate database diff by `liquibase` run this command
+```shell
+mvn clean compile -Pdb-diff
+```
 
 ### How to ...
 
