@@ -56,6 +56,7 @@
 
         <!-- tkit -->
         <tkit.quarkus.version>2.5.0</tkit.quarkus.version>
+        <tkit.liquibase-plugin.version>1.2.0</tkit.liquibase-plugin.version>
 
         <!-- Maven configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -648,7 +649,7 @@
                     <plugin>
                         <groupId>org.tkit.maven</groupId>
                         <artifactId>tkit-liquibase-plugin</artifactId>
-                        <version>1.1.0</version>
+                        <version>${tkit.liquibase-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>default</id>
