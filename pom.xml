@@ -54,8 +54,11 @@
         <quarkiverse.quarkus-openapi-generator.version>2.2.14</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.2.0</quarkiverse.mockserver.version>
 
+        <!-- onecx -->
+        <onecx.quarkus.version>0.2.0</onecx.quarkus.version>
+
         <!-- tkit -->
-        <tkit.quarkus.version>2.5.0</tkit.quarkus.version>
+        <tkit.quarkus.version>2.6.0</tkit.quarkus.version>
         <tkit.liquibase-plugin.version>1.2.0</tkit.liquibase-plugin.version>
 
         <!-- Maven configuration -->
@@ -105,6 +108,13 @@
                 <groupId>org.tkit.quarkus.lib</groupId>
                 <artifactId>tkit-quarkus-bom</artifactId>
                 <version>${tkit.quarkus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.github.onecx.quarkus</groupId>
+                <artifactId>onecx-quarkus-bom</artifactId>
+                <version>${onecx.quarkus.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
