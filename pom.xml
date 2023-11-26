@@ -53,6 +53,7 @@
         <quarkus.smallrye-open-api.version>3.7.0</quarkus.smallrye-open-api.version>
         <quarkiverse.quarkus-openapi-generator.version>2.2.14</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.2.0</quarkiverse.mockserver.version>
+        <quarkus.operator.version>6.4.0</quarkus.operator.version>
 
         <!-- onecx -->
         <onecx.quarkus.version>0.2.0</onecx.quarkus.version>
@@ -168,11 +169,27 @@
                 <artifactId>liquibase-sessionlock</artifactId>
                 <version>${liquibase-sessionlock.version}</version>
             </dependency>
+
+            <!-- k8s operators -->
+            <dependency>
+                <groupId>io.quarkiverse.operatorsdk</groupId>
+                <artifactId>quarkus-operator-sdk-bundle-generator</artifactId>
+                <version>${quarkus.operator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkiverse.operatorsdk</groupId>
+                <artifactId>quarkus-operator-sdk</artifactId>
+                <version>${quarkus.operator.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
 
+        <dependency>
+            <groupId>io.github.onecx.quarkus</groupId>
+            <artifactId>onecx-core</artifactId>
+        </dependency>
 
         <!-- Build -->
         <dependency>
