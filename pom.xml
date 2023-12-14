@@ -53,7 +53,8 @@
         <quarkus.smallrye-open-api.version>3.7.0</quarkus.smallrye-open-api.version>
         <quarkiverse.quarkus-openapi-generator.version>2.2.15</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.2.0</quarkiverse.mockserver.version>
-        <quarkus.operator.version>6.4.1</quarkus.operator.version>
+        <!-- Version 6.4.0 is compatible with Quarkus 3.6 -->
+        <quarkus.operator.version>6.4.0</quarkus.operator.version>
 
         <!-- onecx -->
         <onecx.quarkus.version>0.4.0</onecx.quarkus.version>
