@@ -88,7 +88,7 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <assertj.version>3.25.1</assertj.version>
         <liquibase-sessionlock.version>1.6.9</liquibase-sessionlock.version>
-        <swagger-parser.version>2.1.19</swagger-parser.version>
+        <swagger-parser.version>2.1.20</swagger-parser.version>
         <download-maven-plugin.version>1.8.0</download-maven-plugin.version>
         <!-- version of the postgres container for liquibase diff -->
         <liquibase.postgres.version>14</liquibase.postgres.version>
