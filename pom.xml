@@ -48,19 +48,19 @@
         <enforce-test-deps-scope.skip>${enforcer.skip}</enforce-test-deps-scope.skip>
 
         <!-- Quarkus configuration -->
-        <quarkus.version>3.6.4</quarkus.version>
-        <quarkus.hibernate-orm.version>6.2.1.Final</quarkus.hibernate-orm.version>
+        <quarkus.version>3.6.6</quarkus.version>
+        <quarkus.hibernate-orm.version>6.2.19.Final</quarkus.hibernate-orm.version>
         <quarkus.smallrye-open-api.version>3.8.0</quarkus.smallrye-open-api.version>
-        <quarkiverse.quarkus-openapi-generator.version>2.2.15</quarkiverse.quarkus-openapi-generator.version>
+        <quarkiverse.quarkus-openapi-generator.version>2.2.16</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.2.0</quarkiverse.mockserver.version>
         <!-- Version 6.4.0 is compatible with Quarkus 3.6 -->
-        <quarkus.operator.version>6.5.0</quarkus.operator.version>
+        <quarkus.operator.version>6.5.1</quarkus.operator.version>
 
         <!-- onecx -->
-        <onecx.quarkus.version>0.4.0</onecx.quarkus.version>
+        <onecx.quarkus.version>0.5.0</onecx.quarkus.version>
 
         <!-- tkit -->
-        <tkit.quarkus.version>2.9.0</tkit.quarkus.version>
+        <tkit.quarkus.version>2.11.0</tkit.quarkus.version>
         <tkit.liquibase-plugin.version>1.2.0</tkit.liquibase-plugin.version>
 
         <!-- Maven configuration -->
@@ -70,7 +70,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <maven.compiler-plugin.version>3.12.1</maven.compiler-plugin.version>
-        <maven.surefire-plugin.version>3.2.3</maven.surefire-plugin.version>
+        <maven.surefire-plugin.version>3.2.5</maven.surefire-plugin.version>
         <maven.formatter-plugin.version>2.23.0</maven.formatter-plugin.version>
         <maven.impsort-plugin.version>1.9.0</maven.impsort-plugin.version>
         <maven.enforcer-plugin.version>3.4.1</maven.enforcer-plugin.version>
@@ -88,7 +88,7 @@
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <assertj.version>3.25.1</assertj.version>
         <liquibase-sessionlock.version>1.6.9</liquibase-sessionlock.version>
-        <swagger-parser.version>2.1.19</swagger-parser.version>
+        <swagger-parser.version>2.1.20</swagger-parser.version>
         <download-maven-plugin.version>1.8.0</download-maven-plugin.version>
         <!-- version of the postgres container for liquibase diff -->
         <liquibase.postgres.version>14</liquibase.postgres.version>
