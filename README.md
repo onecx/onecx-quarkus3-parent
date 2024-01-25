@@ -15,6 +15,7 @@ This parent contains:
     * Lombook
     * MapStruct
     * [tkit-quarkus](https://github.com/1000kit/tkit-quarkus)
+    * [tkit-liquibase-plugin](https://github.com/1000kit/tkit-liquibase-plugin)
 * plugin to build the application
 * plugins for testing the application
 * plugin to sort imports
@@ -27,6 +28,13 @@ This parent contains:
 To generate database diff by `liquibase` run this command
 ```shell
 mvn clean compile -Pdb-diff
+```
+
+#### db-check
+
+After `db-diff` run this command
+```shell
+mvn validate -Pdb-check
 ```
 
 ### How to ...

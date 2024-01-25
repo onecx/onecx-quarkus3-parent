@@ -61,7 +61,7 @@
 
         <!-- tkit -->
         <tkit.quarkus.version>2.11.0</tkit.quarkus.version>
-        <tkit.liquibase-plugin.version>1.2.0</tkit.liquibase-plugin.version>
+        <tkit.liquibase-plugin.version>1.4.0</tkit.liquibase-plugin.version>
 
         <!-- Maven configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -694,6 +694,32 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>db-check</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.tkit.maven</groupId>
+                        <artifactId>tkit-liquibase-plugin</artifactId>
+                        <version>${tkit.liquibase-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>default</id>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                                <phase>validate</phase>
+                                <configuration>
+                                    <skipChanges>
+                                        <dropTable>dataimportlog</dropTable>
+                                    </skipChanges>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>        
         <profile>
             <id>native</id>
             <activation>
