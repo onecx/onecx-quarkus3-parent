@@ -94,6 +94,7 @@
         <liquibase.postgres.version>14</liquibase.postgres.version>
 
         <!-- Jacoco/Sonar -->
+        <sonar.cpd.exclusions>**/mapper/**,**/mappers/**,**/dtos/**,**/dto/**,**/gen/**</sonar.cpd.exclusions>
         <sonar.coverage.exclusions>**/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*,**/mapper/**,**/mappers/**,**/gen/**,**/dtos/**,**/dto/**</sonar.coverage.exclusions>
     </properties>
 
