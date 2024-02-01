@@ -11,7 +11,7 @@ template: |
   Add OneCx application maven parent to your project:
   ```xml
     <parent>
-        <groupId>io.github.onecx</groupId>
+        <groupId>org.tkit.onecx</groupId>
         <artifactId>onecx-quarkus3-parent</artifactId>
         <version>{{ .Version }}</version>
     </parent>
