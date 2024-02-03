@@ -46,7 +46,8 @@
         <format.skip>false</format.skip>
         <enforcer.skip>false</enforcer.skip>
         <enforce-test-deps-scope.skip>${enforcer.skip}</enforce-test-deps-scope.skip>
-
+        <skipUTs>false</skipUTs>
+        
         <!-- Quarkus configuration -->
         <quarkus.version>3.6.6</quarkus.version>
         <quarkus.hibernate-orm.version>6.2.19.Final</quarkus.hibernate-orm.version>
@@ -327,6 +328,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire-plugin.version}</version>
                 <configuration>
+                    <skipTests>${skipUTs}</skipTests>
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                         <!--suppress UnresolvedMavenProperty -->
