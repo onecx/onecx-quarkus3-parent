@@ -81,7 +81,7 @@
         <nexus.staging-plugin.version>1.6.13</nexus.staging-plugin.version>
         <source-plugin.version>3.3.0</source-plugin.version>
         <javadoc-plugin.version>3.6.3</javadoc-plugin.version>
-        <gpg-plugin.version>3.2.0</gpg-plugin.version>
+        <gpg-plugin.version>3.2.1</gpg-plugin.version>
 
         <!-- Other -->
         <openapitools.openapi-generator-maven-plugin.version>7.4.0</openapitools.openapi-generator-maven-plugin.version>
