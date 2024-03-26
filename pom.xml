@@ -56,7 +56,7 @@
         <quarkiverse.quarkus-openapi-generator.version>2.4.1</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.5.0</quarkiverse.mockserver.version>
         <!-- Version 6.4.0 is compatible with Quarkus 3.6 -->
-        <quarkus.operator.version>6.6.5</quarkus.operator.version>
+        <quarkus.operator.version>6.6.6</quarkus.operator.version>
 
         <!-- onecx -->
         <onecx.quarkus.version>0.13.0</onecx.quarkus.version>
