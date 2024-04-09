@@ -49,9 +49,10 @@
         <skipTests>false</skipTests>
         <skipITs>${skipTests}</skipITs>
         <skipUTs>${skipTests}</skipUTs>
-        
+        <skipDocs>false</skipDocs>
+
         <!-- Quarkus configuration -->
-        <quarkus.version>3.8.2</quarkus.version>
+        <quarkus.version>3.8.3</quarkus.version>
         <quarkus.hibernate-orm.version>6.4.4.Final</quarkus.hibernate-orm.version>
         <quarkiverse.quarkus-openapi-generator.version>2.4.1</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.5.0</quarkiverse.mockserver.version>
@@ -64,6 +65,7 @@
         <!-- tkit -->
         <tkit.quarkus.version>2.17.0</tkit.quarkus.version>
         <tkit.liquibase-plugin.version>1.7.0</tkit.liquibase-plugin.version>
+        <tkit.tkit-docs-quarkus-plugin.version>0.2.0</tkit.tkit-docs-quarkus-plugin.version>
 
         <!-- Maven configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -253,10 +255,32 @@
                     <artifactId>download-maven-plugin</artifactId>
                     <version>${download-maven-plugin.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.tkit.maven</groupId>
+                    <artifactId>tkit-docs-quarkus-plugin</artifactId>
+                    <version>${tkit.tkit-docs-quarkus-plugin.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.tkit.maven</groupId>
+                <artifactId>tkit-docs-quarkus-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>docs</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>docs</goal>
+                        </goals>
+                        <configuration>
+                            <skipDocs>${skipDocs}</skipDocs>
+                            <outputDir>docs/modules/svc/pages/</outputDir>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>        
             <plugin>
                 <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
