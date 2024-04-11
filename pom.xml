@@ -52,7 +52,7 @@
         <skipDocs>false</skipDocs>
 
         <!-- Quarkus configuration -->
-        <quarkus.version>3.9.2</quarkus.version>
+        <quarkus.version>3.9.3</quarkus.version>
         <quarkus.hibernate-orm.version>6.4.4.Final</quarkus.hibernate-orm.version>
         <quarkiverse.quarkus-openapi-generator.version>2.4.1</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.7.0</quarkiverse.mockserver.version>
@@ -60,12 +60,12 @@
         <quarkus.operator.version>6.6.6</quarkus.operator.version>
 
         <!-- onecx -->
-        <onecx.quarkus.version>0.15.0</onecx.quarkus.version>
+        <onecx.quarkus.version>0.16.0</onecx.quarkus.version>
 
         <!-- tkit -->
-        <tkit.quarkus.version>2.19.0</tkit.quarkus.version>
+        <tkit.quarkus.version>2.20.0</tkit.quarkus.version>
         <tkit.liquibase-plugin.version>1.8.0</tkit.liquibase-plugin.version>
-        <tkit.tkit-docs-quarkus-plugin.version>0.3.0</tkit.tkit-docs-quarkus-plugin.version>
+        <tkit.tkit-docs-quarkus-plugin.version>0.4.0</tkit.tkit-docs-quarkus-plugin.version>
 
         <!-- Maven configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -316,14 +316,14 @@
                     </compilerArgs>
                     <annotationProcessorPaths>
                         <annotationProcessorPath>
+                            <groupId>io.quarkus</groupId>
+                            <artifactId>quarkus-extension-processor</artifactId>
+                            <version>${quarkus.version}</version>
+                        </annotationProcessorPath>
+                        <annotationProcessorPath>
                             <groupId>org.hibernate.orm</groupId>
                             <artifactId>hibernate-jpamodelgen</artifactId>
                             <version>${quarkus.hibernate-orm.version}</version>
-                        </annotationProcessorPath>
-                        <annotationProcessorPath>
-                            <groupId>io.quarkus</groupId>
-                            <artifactId>quarkus-panache-common</artifactId>
-                            <version>${quarkus.version}</version>
                         </annotationProcessorPath>
                         <annotationProcessorPath>
                             <groupId>org.mapstruct</groupId>
@@ -568,14 +568,28 @@
                                     <excludes>
                                         <exclude>io.quarkus:quarkus-resteasy</exclude>
                                     </excludes>
-                                    <message>------> !!! Replace quarkus-resteasy with quarkus-resteasy-reactive !!!</message>
+                                    <message>------> !!! Replace quarkus-resteasy with quarkus-rest !!!</message>
+                                    <searchTransitive>true</searchTransitive>
+                                </bannedDependencies>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>io.quarkus:quarkus-resteasy-reactive</exclude>
+                                    </excludes>
+                                    <message>------> !!! Replace quarkus-resteasy with quarkus-rest !!!</message>
                                     <searchTransitive>true</searchTransitive>
                                 </bannedDependencies>
                                 <bannedDependencies>
                                     <excludes>
                                         <exclude>io.quarkus:quarkus-resteasy-jackson</exclude>
                                     </excludes>
-                                    <message>------> !!! Replace quarkus-resteasy-jackson with quarkus-resteasy-reactive-jackson !!!</message>
+                                    <message>------> !!! Replace quarkus-resteasy-jackson with quarkus-rest-jackson !!!</message>
+                                    <searchTransitive>true</searchTransitive>
+                                </bannedDependencies>
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>io.quarkus:quarkus-resteasy-reactive-jackson</exclude>
+                                    </excludes>
+                                    <message>------> !!! Replace quarkus-resteasy-jackson with quarkus-rest-jackson !!!</message>
                                     <searchTransitive>true</searchTransitive>
                                 </bannedDependencies>
                                 <bannedDependencies>
@@ -594,16 +608,16 @@
                                 </bannedDependencies>
                                 <bannedDependencies>
                                     <excludes>
-                                        <exclude>io.quarkus:quarkus-rest-client</exclude>
+                                        <exclude>io.quarkus:quarkus-rest-client-reactive</exclude>
                                     </excludes>
-                                    <message>------> !!! Replace quarkus-rest-client with quarkus-rest-client-reactive !!!</message>
+                                    <message>------> !!! Replace quarkus-rest-client with quarkus-rest-client !!!</message>
                                     <searchTransitive>true</searchTransitive>
                                 </bannedDependencies>
                                 <bannedDependencies>
                                     <excludes>
-                                        <exclude>io.quarkus:quarkus-rest-client-jackson</exclude>
+                                        <exclude>io.quarkus:quarkus-rest-client-reactive-jackson</exclude>
                                     </excludes>
-                                    <message>------> !!! Replace quarkus-rest-client-jackson with quarkus-rest-client-reactive-jackson !!!</message>
+                                    <message>------> !!! Replace quarkus-rest-client-jackson with quarkus-rest-client-jackson !!!</message>
                                     <searchTransitive>true</searchTransitive>
                                 </bannedDependencies>
                             </rules>
