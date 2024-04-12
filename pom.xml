@@ -276,7 +276,6 @@
                         </goals>
                         <configuration>
                             <skipDocs>${skipDocs}</skipDocs>
-                            <outputDir>docs/modules/svc/pages/</outputDir>
                         </configuration>
                     </execution>
                 </executions>
