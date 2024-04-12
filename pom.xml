@@ -64,7 +64,7 @@
 
         <!-- tkit -->
         <tkit.quarkus.version>2.20.0</tkit.quarkus.version>
-        <tkit.liquibase-plugin.version>1.9.0</tkit.liquibase-plugin.version>
+        <tkit.liquibase-plugin.version>1.10.0</tkit.liquibase-plugin.version>
         <tkit.tkit-docs-quarkus-plugin.version>0.5.0</tkit.tkit-docs-quarkus-plugin.version>
 
         <!-- Maven configuration -->
