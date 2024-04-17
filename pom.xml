@@ -60,7 +60,7 @@
         <quarkus.operator.version>6.6.7</quarkus.operator.version>
 
         <!-- onecx -->
-        <onecx.quarkus.version>0.16.0</onecx.quarkus.version>
+        <onecx.quarkus.version>0.17.0</onecx.quarkus.version>
 
         <!-- tkit -->
         <tkit.quarkus.version>2.22.0</tkit.quarkus.version>
