@@ -54,7 +54,7 @@
         <!-- Quarkus configuration -->
         <quarkus.version>3.9.4</quarkus.version>
         <quarkus.hibernate-orm.version>6.4.4.Final</quarkus.hibernate-orm.version>
-        <quarkiverse.quarkus-openapi-generator.version>2.4.1</quarkiverse.quarkus-openapi-generator.version>
+        <quarkiverse.quarkus-openapi-generator.version>2.4.2</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.7.0</quarkiverse.mockserver.version>
         <!-- Version 6.4.0 is compatible with Quarkus 3.6 -->
         <quarkus.operator.version>6.6.7</quarkus.operator.version>
