@@ -80,7 +80,7 @@
         <maven.enforcer-plugin.version>3.5.0</maven.enforcer-plugin.version>
 
         <!-- Maven central release configuration -->
-        <nexus.staging-plugin.version>1.6.13</nexus.staging-plugin.version>
+        <nexus.staging-plugin.version>1.7.0</nexus.staging-plugin.version>
         <source-plugin.version>3.3.1</source-plugin.version>
         <javadoc-plugin.version>3.7.0</javadoc-plugin.version>
         <gpg-plugin.version>3.2.4</gpg-plugin.version>
