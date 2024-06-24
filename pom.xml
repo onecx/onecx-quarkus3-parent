@@ -52,7 +52,7 @@
         <skipDocs>false</skipDocs>
 
         <!-- Quarkus configuration -->
-        <quarkus.version>3.11.1</quarkus.version>
+        <quarkus.version>3.11.3</quarkus.version>
         <quarkus.hibernate-orm.version>6.4.4.Final</quarkus.hibernate-orm.version>
         <quarkiverse.quarkus-openapi-generator.version>2.4.2</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.9.0</quarkiverse.mockserver.version>
@@ -192,6 +192,10 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.tkit.quarkus.lib</groupId>
+            <artifactId>tkit-quarkus-security</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.tkit.onecx.quarkus</groupId>
             <artifactId>onecx-core</artifactId>
