@@ -64,7 +64,7 @@
         <!-- tkit -->
         <tkit.quarkus.version>2.27.0</tkit.quarkus.version>
         <tkit.liquibase-plugin.version>1.10.0</tkit.liquibase-plugin.version>
-        <tkit.tkit-docs-quarkus-plugin.version>0.8.0</tkit.tkit-docs-quarkus-plugin.version>
+        <tkit.tkit-docs-quarkus-plugin.version>0.9.0</tkit.tkit-docs-quarkus-plugin.version>
 
         <!-- Maven configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
