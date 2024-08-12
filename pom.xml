@@ -234,6 +234,11 @@
 
         <!-- Test -->
         <dependency>
+            <groupId>org.tkit.quarkus.lib</groupId>
+            <artifactId>tkit-quarkus-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
@@ -400,6 +405,7 @@
                                 <!--suppress UnresolvedMavenProperty -->
                                 <maven.home>${maven.home}</maven.home>
                                 <quarkus.jacoco.excludes>${sonar.coverage.exclusions}</quarkus.jacoco.excludes>
+                                <tkit.test.integration-test-enabled>true</tkit.test.integration-test-enabled>
                             </systemPropertyVariables>
                         </configuration>
                     </execution>
