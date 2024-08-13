@@ -406,6 +406,10 @@
                                 <maven.home>${maven.home}</maven.home>
                                 <quarkus.jacoco.excludes>${sonar.coverage.exclusions}</quarkus.jacoco.excludes>
                                 <tkit.test.integration-test-enabled>true</tkit.test.integration-test-enabled>
+
+                                <!-- Quarkus Issue: https://github.com/quarkusio/quarkus/issues/42509 -->
+                                <!-- Remove this line when the Quarkus Issue will be fixed -->
+                                <quarkus.keycloak.devservices.start-command>start --http-enabled=true --hostname-strict=false --features=hostname:v1</quarkus.keycloak.devservices.start-command>
                             </systemPropertyVariables>
                         </configuration>
                     </execution>
