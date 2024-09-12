@@ -53,7 +53,7 @@
 
         <!-- Quarkus configuration -->
         <quarkus.version>3.14.3</quarkus.version>
-        <quarkus.hibernate-orm.version>6.5.2.Final</quarkus.hibernate-orm.version>
+        <quarkus.hibernate-orm.version>6.6.0.Final</quarkus.hibernate-orm.version>
         <quarkiverse.quarkus-openapi-generator.version>2.4.7</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.12.0</quarkiverse.mockserver.version>
         <quarkus.operator.version>6.8.0</quarkus.operator.version>
@@ -290,10 +290,32 @@
                     <artifactId>tkit-docs-quarkus-plugin</artifactId>
                     <version>${tkit.tkit-docs-quarkus-plugin.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>io.quarkus</groupId>
+                    <artifactId>quarkus-config-doc-maven-plugin</artifactId>
+                    <version>${quarkus.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-config-doc-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>adoc</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>generate-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <targetDirectory>${project.basedir}/target/asciidoc/generated/config/</targetDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.tkit.maven</groupId>
                 <artifactId>tkit-docs-quarkus-plugin</artifactId>
