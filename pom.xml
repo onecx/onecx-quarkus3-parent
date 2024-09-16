@@ -88,7 +88,7 @@
         <openapitools.openapi-generator-maven-plugin.version>7.8.0</openapitools.openapi-generator-maven-plugin.version>
         <projectlombok.version>1.18.34</projectlombok.version>
         <projectlombok.mapstruct-binding.version>0.2.0</projectlombok.mapstruct-binding.version>
-        <mapstruct.version>1.6.0</mapstruct.version>
+        <mapstruct.version>1.6.1</mapstruct.version>
         <assertj.version>3.26.3</assertj.version>
         <liquibase-sessionlock.version>1.6.9</liquibase-sessionlock.version>
         <swagger-parser.version>2.1.22</swagger-parser.version>
