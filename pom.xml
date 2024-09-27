@@ -62,7 +62,7 @@
         <onecx.quarkus.version>0.30.0</onecx.quarkus.version>
 
         <!-- tkit -->
-        <tkit.quarkus.version>2.32.0</tkit.quarkus.version>
+        <tkit.quarkus.version>2.33.0</tkit.quarkus.version>
         <tkit.liquibase-plugin.version>1.13.0</tkit.liquibase-plugin.version>
         <tkit.tkit-docs-quarkus-plugin.version>0.13.0</tkit.tkit-docs-quarkus-plugin.version>
 
