@@ -85,7 +85,7 @@
         <gpg-plugin.version>3.2.7</gpg-plugin.version>
 
         <!-- Other -->
-        <openapitools.openapi-generator-maven-plugin.version>7.8.0</openapitools.openapi-generator-maven-plugin.version>
+        <openapitools.openapi-generator-maven-plugin.version>7.9.0</openapitools.openapi-generator-maven-plugin.version>
         <projectlombok.version>1.18.34</projectlombok.version>
         <projectlombok.mapstruct-binding.version>0.2.0</projectlombok.mapstruct-binding.version>
         <mapstruct.version>1.6.2</mapstruct.version>
