@@ -56,7 +56,7 @@
         <quarkus.hibernate-orm.version>6.6.0.Final</quarkus.hibernate-orm.version>
         <quarkiverse.quarkus-openapi-generator.version>2.4.7</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.13.0</quarkiverse.mockserver.version>
-        <quarkus.operator.version>6.8.3</quarkus.operator.version>
+        <quarkus.operator.version>6.8.4</quarkus.operator.version>
 
         <!-- onecx -->
         <onecx.quarkus.version>0.34.0</onecx.quarkus.version>
