@@ -436,10 +436,6 @@
                                 <maven.home>${maven.home}</maven.home>
                                 <quarkus.jacoco.excludes>${sonar.coverage.exclusions}</quarkus.jacoco.excludes>
                                 <tkit.test.integration-test-enabled>true</tkit.test.integration-test-enabled>
-
-                                <!-- Quarkus Issue: https://github.com/quarkusio/quarkus/issues/42509 -->
-                                <!-- Remove this line when the Quarkus Issue will be fixed -->
-                                <quarkus.keycloak.devservices.image-name>quay.io/keycloak/keycloak:24.0.4</quarkus.keycloak.devservices.image-name>
                             </systemPropertyVariables>
                         </configuration>
                     </execution>
