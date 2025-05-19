@@ -7,6 +7,13 @@ Maven parent for all Quarkus3 OneCx application.
 [![GitHub Actions Status](https://img.shields.io/github/actions/workflow/status/onecx/onecx-quarkus3-parent/build.yml?logo=GitHub&style=for-the-badge)](https://github.com/onecx/onecx-quarkus3-parent/actions/workflows/build.yml)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/release/onecx/onecx-quarkus3-parent?display_name=tag&sort=semver&logo=github&style=for-the-badge)](https://github.com/onecx/onecx-quarkus3-parent/releases/latest)
 
+
+## Versions
+
+Branches:
+* `main` - Quarkus 3.20 LTS
+* `0.x` - Quarkus 3.15 LTS (deprecated)
+
 ### Definition
 
 This parent contains:
