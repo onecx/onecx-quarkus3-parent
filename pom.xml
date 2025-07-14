@@ -82,7 +82,7 @@
         <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
         <source-plugin.version>3.3.1</source-plugin.version>
         <javadoc-plugin.version>3.11.2</javadoc-plugin.version>
-        <gpg-plugin.version>3.2.7</gpg-plugin.version>
+        <gpg-plugin.version>3.2.8</gpg-plugin.version>
 
         <!-- Other -->
         <openapitools.openapi-generator-maven-plugin.version>7.13.0</openapitools.openapi-generator-maven-plugin.version>
