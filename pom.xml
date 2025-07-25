@@ -52,17 +52,17 @@
         <skipDocs>false</skipDocs>
 
         <!-- Quarkus configuration -->
-        <quarkus.version>3.20.1</quarkus.version>
+        <quarkus.version>3.20.2</quarkus.version>
         <quarkus.hibernate-orm.version>6.6.11.Final</quarkus.hibernate-orm.version>
         <quarkiverse.quarkus-openapi-generator.version>2.10.0-lts</quarkiverse.quarkus-openapi-generator.version>
         <quarkiverse.mockserver.version>1.14.0</quarkiverse.mockserver.version>
         <quarkus.operator.version>7.1.2</quarkus.operator.version>
 
         <!-- onecx -->
-        <onecx.quarkus.version>1.6.0</onecx.quarkus.version>
+        <onecx.quarkus.version>1.7.0</onecx.quarkus.version>
 
         <!-- tkit -->
-        <tkit.quarkus.version>3.4.0</tkit.quarkus.version>
+        <tkit.quarkus.version>3.6.0</tkit.quarkus.version>
         <tkit.liquibase-plugin.version>1.15.0</tkit.liquibase-plugin.version>
         <tkit.tkit-docs-quarkus-plugin.version>1.0.0</tkit.tkit-docs-quarkus-plugin.version>
 
@@ -99,6 +99,8 @@
         <!-- Jacoco/Sonar -->
         <sonar.cpd.exclusions>**/mapper/**,**/mappers/**,**/dtos/**,**/dto/**,**/gen/**</sonar.cpd.exclusions>
         <sonar.coverage.exclusions>**/model*/**/*.*,**/resources/**/*.*,**/JaxRsActivator*,**/mapper/**,**/mappers/**,**/gen/**,**/dtos/**,**/dto/**</sonar.coverage.exclusions>
+
+        <onecx.tkit-dynamic-test-openapi.enabled>true</onecx.tkit-dynamic-test-openapi.enabled>
     </properties>
 
     <dependencyManagement>
@@ -244,6 +246,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.tkit.quarkus.lib</groupId>
+            <artifactId>tkit-quarkus-security-dynamic-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
@@ -356,6 +363,10 @@
                             <properties>
                                 <quarkus.container-image.build>true</quarkus.container-image.build>
                                 <quarkus.container-image.group>localhost</quarkus.container-image.group>
+                                <!-- tkit dynamic test -->
+                                <tkit.security-dynamic-test.openapi.enabled>${onecx.tkit-dynamic-test-openapi.enabled}</tkit.security-dynamic-test.openapi.enabled>
+                                <tkit.security-dynamic-test.openapi.disable-integration-test-value>${project.artifactId}</tkit.security-dynamic-test.openapi.disable-integration-test-value>
+                                <tkit.security-dynamic-test.openapi.disable-integration-test-regex>.*-operator</tkit.security-dynamic-test.openapi.disable-integration-test-regex>
                             </properties>
                         </configuration>
                     </execution>
