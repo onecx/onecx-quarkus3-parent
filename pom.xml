@@ -52,19 +52,19 @@
         <skipDocs>false</skipDocs>
 
         <!-- Quarkus configuration -->
-        <quarkus.version>3.20.2.1</quarkus.version>
-        <quarkus.hibernate-orm.version>6.6.11.Final</quarkus.hibernate-orm.version>
-        <quarkiverse.quarkus-openapi-generator.version>2.10.0-lts</quarkiverse.quarkus-openapi-generator.version>
-        <quarkiverse.mockserver.version>1.14.0</quarkiverse.mockserver.version>
-        <quarkus.operator.version>7.1.2</quarkus.operator.version>
+        <quarkus.version>3.27.1</quarkus.version>
+        <quarkus.hibernate-orm.version>7.1.4.Final</quarkus.hibernate-orm.version>
+        <quarkiverse.quarkus-openapi-generator.version>2.13.0-lts</quarkiverse.quarkus-openapi-generator.version>
+        <quarkiverse.mockserver.version>1.15.0</quarkiverse.mockserver.version>
+        <quarkus.operator.version>7.2.3</quarkus.operator.version>
 
         <!-- onecx -->
-        <onecx.quarkus.version>1.7.0</onecx.quarkus.version>
+        <onecx.quarkus.version>2.3.0</onecx.quarkus.version>
 
         <!-- tkit -->
-        <tkit.quarkus.version>3.6.0</tkit.quarkus.version>
-        <tkit.liquibase-plugin.version>1.15.0</tkit.liquibase-plugin.version>
-        <tkit.tkit-docs-quarkus-plugin.version>1.0.0</tkit.tkit-docs-quarkus-plugin.version>
+        <tkit.quarkus.version>4.4.0</tkit.quarkus.version>
+        <tkit.liquibase-plugin.version>1.17.0</tkit.liquibase-plugin.version>
+        <tkit.tkit-docs-quarkus-plugin.version>2.0.0</tkit.tkit-docs-quarkus-plugin.version>
 
         <!-- Maven configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -73,19 +73,19 @@
         <maven.compiler.release>17</maven.compiler.release>
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <maven.compiler-plugin.version>3.14.0</maven.compiler-plugin.version>
-        <maven.surefire-plugin.version>3.5.3</maven.surefire-plugin.version>
-        <maven.formatter-plugin.version>2.26.0</maven.formatter-plugin.version>
+        <maven.surefire-plugin.version>3.5.4</maven.surefire-plugin.version>
+        <maven.formatter-plugin.version>2.29.0</maven.formatter-plugin.version>
         <maven.impsort-plugin.version>1.12.0</maven.impsort-plugin.version>
-        <maven.enforcer-plugin.version>3.5.0</maven.enforcer-plugin.version>
+        <maven.enforcer-plugin.version>3.6.2</maven.enforcer-plugin.version>
 
         <!-- Maven central release configuration -->
-        <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
         <source-plugin.version>3.3.1</source-plugin.version>
         <javadoc-plugin.version>3.11.2</javadoc-plugin.version>
         <gpg-plugin.version>3.2.8</gpg-plugin.version>
 
         <!-- Other -->
-        <openapitools.openapi-generator-maven-plugin.version>7.13.0</openapitools.openapi-generator-maven-plugin.version>
+        <openapitools.openapi-generator-maven-plugin.version>7.16.0</openapitools.openapi-generator-maven-plugin.version>
         <projectlombok.version>1.18.38</projectlombok.version>
         <projectlombok.mapstruct-binding.version>0.2.0</projectlombok.mapstruct-binding.version>
         <mapstruct.version>1.6.3</mapstruct.version>
@@ -94,7 +94,7 @@
         <swagger-parser.version>2.1.25</swagger-parser.version>
         <download-maven-plugin.version>1.13.0</download-maven-plugin.version>
         <!-- version of the postgres container for liquibase diff -->
-        <liquibase.postgres.version>14</liquibase.postgres.version>
+        <liquibase.postgres.version>18</liquibase.postgres.version>
 
         <!-- Jacoco/Sonar -->
         <sonar.cpd.exclusions>**/mapper/**,**/mappers/**,**/dtos/**,**/dto/**,**/gen/**</sonar.cpd.exclusions>
@@ -808,7 +808,7 @@
             </activation>
             <properties>
                 <skipITs>false</skipITs>
-                <quarkus.package.type>native</quarkus.package.type>
+                <quarkus.native.enabled>true</quarkus.native.enabled>
             </properties>
         </profile>
         <profile>

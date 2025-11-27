@@ -11,7 +11,8 @@ Maven parent for all Quarkus3 OneCx application.
 ## Versions
 
 Branches:
-* `main` - Quarkus 3.20 LTS
+* `main` - Quarkus 3.27 LTS
+* `1.x`  - Quarkus 3.20 LTS (deprecated)
 * `0.x` - Quarkus 3.15 LTS (deprecated)
 
 ### Definition
