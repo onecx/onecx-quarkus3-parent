@@ -1,6 +1,6 @@
 # onecx-quarkus3-parent
 
-Maven parent for all Quarkus3 OneCx application.
+Maven parent for all Quarkus3 OneCX applications
 
 [![License](https://img.shields.io/github/license/onecx/onecx-quarkus3-parent?style=for-the-badge&logo=apache)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Supported JVM Versions](https://img.shields.io/badge/JVM-17-brightgreen.svg?style=for-the-badge&logo=Java)](https://openjdk.org/projects/jdk/17/)
