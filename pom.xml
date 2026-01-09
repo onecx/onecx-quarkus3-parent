@@ -50,7 +50,7 @@
         <skipITs>${skipTests}</skipITs>
         <skipUTs>${skipTests}</skipUTs>
         <skipDocs>false</skipDocs>
-        <indexIncludeHeader>false</indexIncludeHeader>
+        <tkit-docs.indexIncludeHeader>false</tkit-docs.indexIncludeHeader>
 
         <!-- Quarkus configuration -->
         <quarkus.version>3.27.1</quarkus.version>
@@ -344,7 +344,7 @@
                         </goals>
                         <configuration>
                             <skipDocs>${skipDocs}</skipDocs>
-                            <indexIncludeHeader>${indexIncludeHeader}</indexIncludeHeader>
+                            <indexIncludeHeader>${tkit-docs.indexIncludeHeader}</indexIncludeHeader>
                         </configuration>
                     </execution>
                 </executions>
