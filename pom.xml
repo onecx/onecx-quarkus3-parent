@@ -50,6 +50,7 @@
         <skipITs>${skipTests}</skipITs>
         <skipUTs>${skipTests}</skipUTs>
         <skipDocs>false</skipDocs>
+        <tkit-docs.indexIncludeHeader>false</tkit-docs.indexIncludeHeader>
 
         <!-- Quarkus configuration -->
         <quarkus.version>3.27.1</quarkus.version>
@@ -64,7 +65,7 @@
         <!-- tkit -->
         <tkit.quarkus.version>4.6.0</tkit.quarkus.version>
         <tkit.liquibase-plugin.version>1.17.0</tkit.liquibase-plugin.version>
-        <tkit.tkit-docs-quarkus-plugin.version>2.0.0</tkit.tkit-docs-quarkus-plugin.version>
+        <tkit.tkit-docs-quarkus-plugin.version>2.1.0</tkit.tkit-docs-quarkus-plugin.version>
 
         <!-- Maven configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -343,6 +344,7 @@
                         </goals>
                         <configuration>
                             <skipDocs>${skipDocs}</skipDocs>
+                            <indexIncludeHeader>${tkit-docs.indexIncludeHeader}</indexIncludeHeader>
                         </configuration>
                     </execution>
                 </executions>
