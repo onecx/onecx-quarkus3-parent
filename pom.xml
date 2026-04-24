@@ -51,32 +51,31 @@
         <skipUTs>${skipTests}</skipUTs>
         <skipDocs>false</skipDocs>
         <tkit-docs.indexIncludeHeader>false</tkit-docs.indexIncludeHeader>
+        <quarkus.build.skipSourceTestsGeneration>false</quarkus.build.skipSourceTestsGeneration>
 
         <!-- Quarkus configuration -->
-        <quarkus.version>3.27.1</quarkus.version>
-        <quarkus.hibernate-orm.version>7.1.4.Final</quarkus.hibernate-orm.version>
-        <quarkiverse.quarkus-openapi-generator.version>2.13.0-lts</quarkiverse.quarkus-openapi-generator.version>
-        <quarkiverse.mockserver.version>1.15.0</quarkiverse.mockserver.version>
-        <quarkus.operator.version>7.2.3</quarkus.operator.version>
+        <quarkus.version>3.33.1</quarkus.version>
+        <quarkus.hibernate-orm.version>7.2.6.Final</quarkus.hibernate-orm.version>
+        <quarkiverse.quarkus-openapi-generator.version>2.15.0-lts</quarkiverse.quarkus-openapi-generator.version>
+        <quarkiverse.mockserver.version>1.17.0</quarkiverse.mockserver.version>
+        <quarkus.operator.version>7.7.3</quarkus.operator.version>
 
         <!-- onecx -->
-        <onecx.quarkus.version>2.4.0</onecx.quarkus.version>
+        <onecx.quarkus.version>3.0.0</onecx.quarkus.version>
 
         <!-- tkit -->
-        <tkit.quarkus.version>4.7.0</tkit.quarkus.version>
-        <tkit.liquibase-plugin.version>1.17.0</tkit.liquibase-plugin.version>
-        <tkit.tkit-docs-quarkus-plugin.version>2.1.0</tkit.tkit-docs-quarkus-plugin.version>
+        <tkit.quarkus.version>5.1.0</tkit.quarkus.version>
+        <tkit.liquibase-plugin.version>1.18.0</tkit.liquibase-plugin.version>
+        <tkit.tkit-docs-quarkus-plugin.version>3.0.0</tkit.tkit-docs-quarkus-plugin.version>
 
         <!-- Maven configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>25</maven.compiler.release>
         <maven.compiler.parameters>true</maven.compiler.parameters>
-        <maven.compiler-plugin.version>3.14.1</maven.compiler-plugin.version>
-        <maven.surefire-plugin.version>3.5.4</maven.surefire-plugin.version>
+        <maven.compiler-plugin.version>3.15.0</maven.compiler-plugin.version>
+        <maven.surefire-plugin.version>3.5.5</maven.surefire-plugin.version>
         <maven.formatter-plugin.version>2.29.0</maven.formatter-plugin.version>
-        <maven.impsort-plugin.version>1.12.0</maven.impsort-plugin.version>
+        <maven.impsort-plugin.version>1.13.0</maven.impsort-plugin.version>
         <maven.enforcer-plugin.version>3.6.2</maven.enforcer-plugin.version>
 
         <!-- Maven central release configuration -->
@@ -92,10 +91,14 @@
         <mapstruct.version>1.6.3</mapstruct.version>
         <assertj.version>3.27.6</assertj.version>
         <liquibase-sessionlock.version>1.6.9</liquibase-sessionlock.version>
-        <swagger-parser.version>2.1.36</swagger-parser.version>
         <download-maven-plugin.version>1.13.0</download-maven-plugin.version>
         <!-- version of the postgres container for liquibase diff -->
         <liquibase.postgres.version>18</liquibase.postgres.version>
+
+        <!-- maven-enforcer-plugin -->
+        <maven.min.version>3.9.0</maven.min.version>
+        <jdk.min.version>${maven.compiler.release}</jdk.min.version>
+        <insecure.repositories>ERROR</insecure.repositories>
 
         <!-- Jacoco/Sonar -->
         <sonar.cpd.exclusions>**/mapper/**,**/mappers/**,**/dtos/**,**/dto/**,**/gen/**</sonar.cpd.exclusions>
@@ -161,15 +164,6 @@
                 <version>${quarkiverse.mockserver.version}</version>
                 <scope>test</scope>
             </dependency>
-            <!-- Only for testing to fix mockserver -->
-            <!-- Use with openapi generator and mockserver in BFF -->
-            <dependency>
-                <groupId>io.swagger.parser.v3</groupId>
-                <artifactId>swagger-parser</artifactId>
-                <version>${swagger-parser.version}</version>
-                <scope>test</scope>
-            </dependency>
-
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
@@ -253,7 +247,7 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-junit5</artifactId>
+            <artifactId>quarkus-junit</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -353,14 +347,15 @@
                 <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
                 <version>${quarkus.version}</version>
-                <extensions>true</extensions>
+                <extensions>true</extensions>                
                 <executions>
                     <execution>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>generate-code</goal>
-                            <goal>generate-code-tests</goal>
-                        </goals>
+                        <id>default-generate-code-tests</id>
+                        <configuration>
+                            <skipSourceGeneration>${quarkus.build.skipSourceTestsGeneration}</skipSourceGeneration>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <configuration>
                             <properties>
                                 <quarkus.container-image.build>true</quarkus.container-image.build>
@@ -494,6 +489,58 @@
                     </dependency>
                 </dependencies>
                 <executions>
+                    <execution>
+                        <id>enforce-java-version</id>
+                        <goals>
+                        <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                        <rules>
+                            <bannedRepositories>
+                            <message>To build this project, don't use maven repositories over HTTP. Please use HTTPS in your settings.xml or run the build with property insecure.repositories=WARN</message>
+                            <level>${insecure.repositories}</level>
+                            <bannedRepositories>
+                                <bannedRepository>http://*</bannedRepository>
+                            </bannedRepositories>
+                            <bannedPluginRepositories>
+                                <bannedPluginRepository>http://*</bannedPluginRepository>
+                            </bannedPluginRepositories>
+                            </bannedRepositories>
+                            <requireJavaVersion>
+                            <message>To build this project JDK ${jdk.min.version} (or greater) is required. Please install it.</message>
+                            <version>${jdk.min.version}</version>
+                            </requireJavaVersion>
+                        </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce-maven-version</id>
+                        <goals>
+                        <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                        <rules>
+                            <requireMavenVersion>
+                            <message>To build this project Maven ${maven.min.version} (or greater) is required. Please install it.</message>
+                            <version>${maven.min.version}</version>
+                            </requireMavenVersion>
+                        </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>validate-project-structure</id>
+                        <goals>
+                        <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                        <rules>
+                            <requireMatchingCoordinates>
+                            <groupIdPattern>org\.tkit\.onecx*</groupIdPattern>
+                            <message>All Onecx projects must have a groupId starting with 'org.tkit.onecx'</message>
+                            </requireMatchingCoordinates>
+                        </rules>
+                        </configuration>
+                    </execution>
                     <execution>
                         <id>enforce</id>
                         <configuration>
@@ -637,6 +684,15 @@
                         <id>quarkus-enforce-banned-deps</id>
                         <configuration>
                             <rules>
+                                <!--
+                                <bannedDependencies>
+                                    <excludes>
+                                        <exclude>io.quarkus:quarkus-junit5*</exclude>
+                                    </excludes>
+                                    <message>!!! Replace quarkus-junit5 with quarkus-junit !!!</message>
+                                    <searchTransitive>false</searchTransitive>
+                                </bannedDependencies>
+                                -->
                                 <bannedDependencies>
                                     <excludes>
                                         <exclude>io.quarkus:quarkus-resteasy</exclude>

@@ -7,3 +7,5 @@ jobs:
   java:
     uses: onecx/ci-java-lib/.github/workflows/build-release.yml@v1
     secrets: inherit
+    with:
+      java-version: '25'
