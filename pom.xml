@@ -347,19 +347,13 @@
                 <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
                 <version>${quarkus.version}</version>
-                <extensions>true</extensions>                
+                <extensions>true</extensions>
                 <executions>
                     <execution>
                         <id>default-generate-code-tests</id>
                         <configuration>
                             <skipSourceGeneration>${quarkus.build.skipSourceTestsGeneration}</skipSourceGeneration>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <configuration>
                             <properties>
-                                <quarkus.container-image.build>true</quarkus.container-image.build>
-                                <quarkus.container-image.group>localhost</quarkus.container-image.group>
                                 <!-- tkit dynamic test -->
                                 <tkit.security-dynamic-test.openapi.enabled>${onecx.tkit-dynamic-test-openapi.enabled}</tkit.security-dynamic-test.openapi.enabled>
                                 <tkit.security-dynamic-test.openapi.disable-integration-test-value>${project.artifactId}</tkit.security-dynamic-test.openapi.disable-integration-test-value>
@@ -368,6 +362,12 @@
                         </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                  <properties>
+                    <quarkus.container-image.build>true</quarkus.container-image.build>
+                    <quarkus.container-image.group>localhost</quarkus.container-image.group>
+                  </properties>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
