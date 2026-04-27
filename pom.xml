@@ -89,7 +89,7 @@
         <projectlombok.version>1.18.42</projectlombok.version>
         <projectlombok.mapstruct-binding.version>0.2.0</projectlombok.mapstruct-binding.version>
         <mapstruct.version>1.6.3</mapstruct.version>
-        <assertj.version>3.27.6</assertj.version>
+        <assertj.version>3.27.7</assertj.version>
         <liquibase-sessionlock.version>1.6.9</liquibase-sessionlock.version>
         <download-maven-plugin.version>1.13.0</download-maven-plugin.version>
         <!-- version of the postgres container for liquibase diff -->
